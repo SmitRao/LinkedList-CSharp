@@ -34,6 +34,7 @@ namespace LinkedList
             this.size++;
         }
 
+        /*
         public void RemoveIndex(int index)
         {
             if(index >= this.size || index < 0)
@@ -48,13 +49,19 @@ namespace LinkedList
                 return;
             }
 
-            ref = this.front;
-            for(int i = 0; i < index; i++)
+            ref = this.front; // Potential error here
+            for(int i = 0; i < index - 1; i++)
             {
-
+                ref = ref.next;
+                // Possible errors
             }
+
+            ref.next = ref.next.next;
+
+            // Add case where this.back is at the index being removed.
             --this.size;
         }
+        */
     }
 
     class Node
